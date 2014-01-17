@@ -1,0 +1,78 @@
+html, body {
+    height: 100%;
+}
+#push {
+    height: 70px;
+}
+footer {
+    height: 18px;
+    color: #777777;
+    text-align: center;
+}
+body > .container {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -70px;
+}
+footer a {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+/* Sorting */
+.pretty th .current {
+    padding-right: 16px;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.pretty th .asc {
+    background-image: url("../images/arrow_up.png");
+}
+
+.pretty th .desc {
+    background-image: url("../images/arrow_down.png");
+}
+
+/* datatable */
+.dataTable {
+    margin-bottom: 0
+}
+.dataTable th[class*=sort] {
+    cursor: pointer
+}
+.dataTable th[class*=sort]:after {
+    content: "\f0dc";
+    display: inline-block;
+    color: #555;
+    font-family: FontAwesome;
+    font-size: 13px;
+    font-weight: normal;
+    float: right;
+    margin-right: 4px;
+    position: relative
+}
+.dataTable th[class*=sorting_] {
+    color: #307ecc
+}
+.dataTable th.sorting_desc:after {
+    content: "\f0dd";
+    top: -6px
+}
+.dataTable th.sorting_asc:after {
+    content: "\f0de";
+    top: 4px
+}
+.dataTable th.sorting_disabled {
+    cursor: inherit
+}
+.dataTable th.sorting_disabled:after {
+    display: none
+}
+.widget-box {
+    padding: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    margin: 3px 0;
+    border-bottom: 1px solid #CCC
+}

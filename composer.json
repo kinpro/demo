@@ -1,0 +1,23 @@
+{
+    "description": "DIDWW Demo"
+    , "homepage": "https://www.didww.com/"
+    , "authors": [
+        {
+            "name": "Igor Gonchar"
+            , "email": "igor.g@didww.com"
+            , "homepage": "https://www.didww.com/"
+        }
+    ]
+    , "require": {
+        "php": ">=5.4"
+        , "gigorok/yoda": "0.1.*"
+        , "didww/php-sdk": "dev-master"
+    }
+    , "autoload": {
+        "classmap": [
+            "controllers/"
+            , "helpers/"
+            , "plugins/"
+        ]
+    }
+}

@@ -1,0 +1,5 @@
+development:
+  siteName: DIDWW Demo (In Development Mode)
+
+production:
+  siteName: DIDWW Demo
