@@ -1,4 +1,6 @@
 {
+    "name": "didww/demo",
+    "minimum-stability": "dev",
     "description": "DIDWW Demo"
     , "homepage": "https://www.didww.com/"
     , "authors": [
@@ -11,8 +13,8 @@
     , "require": {
         "php": ">=5.4"
         , "gigorok/yoda": "0.1.*"
-        , "didww/php-sdk": "dev-master"
-        , "gigorok/yoda-pagination": "dev-master"
+        , "didww/php-sdk": "0.1.*"
+        , "gigorok/yoda-pagination": "0.1.*"
     }
     , "autoload": {
         "classmap": [
