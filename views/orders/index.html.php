@@ -39,7 +39,7 @@
             <td nowrap>
                 <a href="index.php?controller=orders&action=renew&did_number=<?= $did->getDidNumber() ?>&customer_id=<?= $customer_id ?>">Renew</a><br>
                 <a href="index.php?controller=mapping&action=add&did_number=<?= $did->getDidNumber() ?>&customer_id=<?= $customer_id ?>">Update Mapping</a><br>
-                <a href="index.php?controller=call_history&did_number=<?= $did->getDidNumber() ?>">CDR</a><br>
+                <a href="index.php?controller=call_history&did_number=<?= $did->getDidNumber() ?>&customer_id=<?= $customer_id ?>">Call History</a><br>
                 <?php if($did->getDidStatus() == 1): ?>
                     <a href="index.php?controller=orders&action=cancel&did_number=<?= $did->getDidNumber() ?>&customer_id=<?= $customer_id ?>">Cancel</a>
                 <?php else : if($did->getDidStatus() == -1): ?>

@@ -12,6 +12,7 @@
         "php": ">=5.4"
         , "gigorok/yoda": "0.1.*"
         , "didww/php-sdk": "dev-master"
+        , "gigorok/yoda-pagination": "dev-master"
     }
     , "autoload": {
         "classmap": [

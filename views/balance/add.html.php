@@ -4,7 +4,7 @@
     <input type="hidden" name="action" value="update">
 
     <div class="form-group">
-        <label for="amount" class="col-lg-2 control-label">Amount</label>
+        <label for="amount" class="col-lg-2 control-label">Amount (Points)</label>
         <div class="col-lg-3">
             <input type="text" name="amount" id="amount" class='form-control'>
         </div>

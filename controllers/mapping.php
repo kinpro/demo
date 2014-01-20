@@ -18,6 +18,8 @@ class MappingController extends ApplicationController
         $customer_id = \Yoda\Request::getInt('customer_id');
         $did_number = \Yoda\Request::getString('did_number');
 
+        $this->getView()->addJavascriptURL('/assets/javascripts/mapping.js');
+
         $this->getView()->setProperties(['customer_id' => $customer_id, 'did' => $did_number])->display();
     }
 
@@ -26,6 +28,8 @@ class MappingController extends ApplicationController
         $customer_id = \Yoda\Request::getInt('customer_id');
         $did_number = \Yoda\Request::getString('did_number');
         $map_type = \Yoda\Request::getString('map_type');
+        $map_proto = \Yoda\Request::getString('map_proto');
+        $host = \Yoda\Request::getString('host');
         $map_details = \Yoda\Request::getString('map_details');
 
         try {
@@ -35,6 +39,20 @@ class MappingController extends ApplicationController
                     break;
                 case 'pstn':
                     $mapping = new Didww\API2\Mapping\PSTN($map_details);
+                    break;
+                case 'voip':
+                    switch($map_proto) {
+                        case 'sip':
+                            $mapping = new Didww\API2\Mapping\SIP($host, $map_details);
+                            break;
+                        case 'h323':
+                            $mapping = new Didww\API2\Mapping\H323($host, $map_details);
+                            break;
+                        case 'iax':
+                            $mapping = new Didww\API2\Mapping\IAX($host, $map_details);
+                            break;
+                        default:
+                    }
                     break;
                 default:
                     break;

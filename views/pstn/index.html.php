@@ -1,5 +1,13 @@
 <h1>PSTN Networks</h1>
 
+<form class="form-horizontal" action="index.php" method="post" role="form">
+    <input type="hidden" name="authenticity_token" value="<?= $authenticity_token ?>">
+    <input type="hidden" name="controller" value="pstn">
+    <input type="hidden" name="action" value="update">
+
+    <button type="submit" class="btn btn-primary pull-right">Send Rates</button>
+    <div class="clearfix"></div><br>
+
 <table class="table">
     <tr>
         <th>#</th>
@@ -13,7 +21,7 @@
     </tr>
     <?php
     $i = 0;
-    /** @var $countries Didww\API2\Country */
+    /** @var $country Didww\API2\Country */
     foreach($countries as $country):
         /** @var $network Didww\API2\PSTNNetwork */
         foreach($country->getPSTNNetworks() as $network): ?>
@@ -25,9 +33,13 @@
                 <td><?= $network->getNetworkName() ?></td>
                 <td><?= $network->getNetworkPrefix() ?></td>
                 <td><?= $network->getCostRate() ?></td>
-                <td><?= $network->getSellRate() ?></td>
+                <td><input type="text" name="sell_rate[<?= $network->getNetworkPrefix() ?>]" value="<?= $network->getSellRate() ?>" class='form-control'></td>
             </tr>
         <?php endforeach; ?>
     <?php endforeach; ?>
 </table>
 
+    <button type="submit" class="btn btn-primary pull-right">Send Rates</button>
+    <div class="clearfix"></div><br>
+
+</form>

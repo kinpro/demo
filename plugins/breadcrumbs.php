@@ -33,6 +33,10 @@ class BreadcrumbsPlugin implements \Yoda\Observer\Observer
                 $titles[] = "PSTN";
                 $links[] = 'index.php';
             }
+            if($name == 'mapping') {
+                $titles[] = "Change Mapping";
+                $links[] = 'index.php';
+            }
 
             if($name == 'orders') {
                 $titles[] = "Customers";
