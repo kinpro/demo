@@ -9,9 +9,15 @@ $(document).ready(function(){
         switch (mapType) {
             case 'voip':
                 $('#voip_form').show();
+                $('#map_details').prop('disabled', false);
+                break;
+            case 'pbxww':
+                $('#voip_form').hide();
+                $('#map_details').prop('disabled', true);
                 break;
             default:
                 $('#voip_form').hide();
+                $('#map_details').prop('disabled', false);
         }
     });
 });

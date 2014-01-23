@@ -12,7 +12,7 @@ class APIHelper extends ApplicationHelper
 {
     static function setupClient()
     {
-        Client::setCredentials(new ApiCredentials($_SESSION['username'], $_SESSION['password'], $_SESSION['mode']));
+        Client::setCredentials(new ApiCredentials($_SESSION['username'], $_SESSION['password'], $_SESSION['test_mode']));
 //        Client::setDebug(true);
     }
 

@@ -20,7 +20,7 @@ class AuthorizeController extends \Yoda\Controller
     {
         $userName = \Yoda\Request::getString('username');
         $password = \Yoda\Request::getString('password');
-        $testMode = \Yoda\Request::getBool('mode');
+        $testMode = \Yoda\Request::getBool('test_mode');
 
         try{
             Client::setCredentials(new ApiCredentials($userName, $password, $testMode));
@@ -37,7 +37,7 @@ class AuthorizeController extends \Yoda\Controller
 
         $_SESSION['username'] = $userName;
         $_SESSION['password'] = $password;
-        $_SESSION['mode'] = $testMode;
+        $_SESSION['test_mode'] = $testMode;
 
         $_SESSION['reseller_id'] = $details->getResellerId();
         $this->redirect('index.php');

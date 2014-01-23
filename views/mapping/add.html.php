@@ -25,6 +25,7 @@
                 <option value="gtalk">Google Talk</option>
                 <option value="pstn">PSTN</option>
                 <option value="voip">VOIP</option>
+                <option value="pbxww">PBXww</option>
             </select>
         </div>
     </div>

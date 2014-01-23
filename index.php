@@ -10,4 +10,5 @@ require __DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autolo
 
 session_start();
 
-(new Yoda\Application())->run();
+$app = new Yoda\Application();
+$app->run();

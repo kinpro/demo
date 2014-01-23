@@ -22,11 +22,17 @@
     <nav class="navbar navbar-default" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand" href="/">DIDWW Demo</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <div class="collapse navbar-collapse navbar-ex1-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="<?= $controller == 'default' ? 'active' : '' ?>"><a href="index.php">Dashboard</a></li>
                 <li class="<?= $controller == 'balance' ? 'active' : '' ?>"><a href="index.php?controller=balance">Balance</a></li>
@@ -34,11 +40,23 @@
                 <li class="<?= $controller == 'customers' ? 'active' : '' ?>"><a href="index.php?controller=customers">Customers</a></li>
                 <li class="<?= $controller == 'coverage' ? 'active' : '' ?>"><a href="index.php?controller=coverage">Coverage</a></li>
                 <li class="<?= $controller == 'call_history' ? 'active' : '' ?>"><a href="index.php?controller=call_history">Call History</a></li>
-                <li class="<?= $controller == 'pstn' ? 'active' : '' ?>"><a href="index.php?controller=pstn">PSTN</a></li>
+                <li class="dropdown <?= in_array($controller, ['pstn', 'toll_free']) ? 'active' : '' ?>">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Price Lists <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.php?controller=pstn">PSTN</a></li>
+                        <li><a href="index.php?controller=toll_free">Toll Free</a></li>
+                    </ul>
+                </li>
+                <li class="<?= $controller == 'pbxww' ? 'active' : '' ?>"><a href="index.php?controller=pbxww">PBXww</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?= $_SESSION['username'] ?> <b class="caret"></b></a>
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <?php if(!$_SESSION['test_mode']): ?><span class="label label-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Prod Mode</span><?php endif; ?>
+                        <?= $_SESSION['username'] ?>
+                        <b class="caret"></b>
+                    </a>
                     <ul class="dropdown-menu">
                         <li><a href="index.php?controller=authorize&action=sign_out"><i class="icon-off"></i> Sign out</a></li>
                     </ul>

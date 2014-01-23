@@ -39,7 +39,4 @@
     <?php endforeach; ?>
 </table>
 
-    <button type="submit" class="btn btn-primary pull-right">Send Rates</button>
-    <div class="clearfix"></div><br>
-
 </form>
