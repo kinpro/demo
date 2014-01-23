@@ -16,7 +16,8 @@
             <td>
                 <a href="index.php?controller=orders&action=add&customer_id=<?= $customer_id ?>">New Order</a><br>
                 <a href="index.php?controller=balance&action=add&customer_id=<?= $customer_id ?>">Update Balance</a><br>
-                <a href="index.php?controller=call_history&customer_id=<?= $customer_id ?>">Call History</a>
+                <a href="index.php?controller=call_history&customer_id=<?= $customer_id ?>">Call History</a><br>
+                <a href="index.php?controller=pbxww&customer_id=<?= $customer_id ?>">PBXww</a>
             </td>
         </tr>
     <?php endforeach; ?>

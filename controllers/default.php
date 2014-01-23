@@ -14,6 +14,7 @@ class DefaultController extends ApplicationController
     {
         $details = new ApiDetails();
 
+//        $this->appendRawData();
         $this->getView()->setProperties(['details' => $details])->display();
     }
 

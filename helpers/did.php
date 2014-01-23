@@ -12,7 +12,7 @@ class DIDHelper extends ApplicationHelper
      * @param $customer_id
      * @return array
      */
-    static function getACFDIDsByCustomerID($customer_id)
+    static function getPBXwwDIDsByCustomerID($customer_id)
     {
         $balance = new Didww\API2\Balance();
         $balance->setCustomerId($customer_id);

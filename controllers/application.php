@@ -8,7 +8,6 @@
 
 class ApplicationController extends \Yoda\Controller
 {
-
     function beforeInitialize()
     {
         if(!isset($_SESSION['reseller_id'])) {
@@ -17,10 +16,26 @@ class ApplicationController extends \Yoda\Controller
 
         $this->addObserver(new BreadcrumbsPlugin()); // add breadcrumbs plugin
 
-        APIHelper::setupClient();
+        self::setupAPIClient();
 
         $this->getView()->setProperties([
             'controller' => $this->getName()
+        ]);
+    }
+
+    static function setupAPIClient()
+    {
+        return APIHelper::setupClient($_SESSION['username'], $_SESSION['resellerKey'], $_SESSION['isTestMode']);
+    }
+
+    function appendRawData()
+    {
+        /** @var ApiDebugClient $client */
+        $client = Didww\API2\ServerObject::getClientInstance();
+
+        $this->getView()->setProperties([
+            'request' => $client->getLastRequest(),
+            'response' => $client->getLastResponse(),
         ]);
     }
 

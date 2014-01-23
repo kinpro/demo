@@ -16,24 +16,24 @@
         z-index: 99999;
     }
 </style>
-<form id="acf_form" target="acf_frame" method="post" action="https://<?= $acfdomain ?>/index.php?r=<?= microtime(true) ?>">
-    <input type="hidden" name="message" value="<?= $acf->getMessage() ?>"/>
-    <input type="hidden" name="key" value="<?= $acf->getKey() ?>"/>
-    <input type="hidden" name="reseller_id" value="<?= $acf->getResellerID() ?>"/>
-    <input type="hidden" name="site_name" value="<?= $acf->getSiteName() ?>"/>
-    <input type="hidden" name="site_url" value="<?= $acf->getSiteUrl() ?>" />
-    <input type="hidden" name="help_url" value="<?= $acf->getHelpUrl() ?>" />
-    <input type="hidden" name="support_url" value="<?= $acf->getSupportUrl() ?>" />
-    <input type="hidden" name="language" value="<?= $acf->getLanguage() ?>" />
-    <input type="hidden" name="timezone" value="<?= $acf->getTimezone() ?>" />
+<form id="pbxww_form" method="post" action="https://<?= $pbxwwdomain ?>/index.php?r=<?= microtime(true) ?>">
+    <input type="hidden" name="message" value="<?= $request->getMessage() ?>"/>
+    <input type="hidden" name="key" value="<?= $request->getKey() ?>"/>
+    <input type="hidden" name="reseller_id" value="<?= $request->getResellerID() ?>"/>
+    <input type="hidden" name="site_name" value="<?= $request->getSiteName() ?>"/>
+    <input type="hidden" name="site_url" value="<?= $request->getSiteUrl() ?>" />
+    <input type="hidden" name="help_url" value="<?= $request->getHelpUrl() ?>" />
+    <input type="hidden" name="support_url" value="<?= $request->getSupportUrl() ?>" />
+    <input type="hidden" name="language" value="<?= $request->getLanguage() ?>" />
+    <input type="hidden" name="timezone" value="<?= $request->getTimezone() ?>" />
 </form>
-<iframe id="pbx_frame" name="acf_frame"></iframe>
+<iframe id="pbx_frame"></iframe>
 
 <script type="text/javascript">
     jQuery('document').ready(function($){
         $('#pbx_frame').prependTo($('body'));
 
-        document.forms['acf_form'].submit();
+        document.forms['pbxww_form'].submit();
     })
 
 </script>

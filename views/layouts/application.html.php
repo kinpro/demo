@@ -53,7 +53,7 @@
                 <li class="dropdown">
 
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <?php if(!$_SESSION['test_mode']): ?><span class="label label-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Prod Mode</span><?php endif; ?>
+                        <?php if(!$_SESSION['isTestMode']): ?><span class="label label-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Prod Mode</span><?php endif; ?>
                         <?= $_SESSION['username'] ?>
                         <b class="caret"></b>
                     </a>

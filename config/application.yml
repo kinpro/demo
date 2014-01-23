@@ -1,5 +1,7 @@
 development:
   siteName: DIDWW Demo (In Development Mode)
+  debugSoap: true
 
 production:
   siteName: DIDWW Demo
+  debugSoap: true

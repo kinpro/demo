@@ -6,7 +6,6 @@
 * @copyright 2013 Igor Gonchar
 */
 
-use Didww\API2\ApiCredentials, Didww\API2\ApiClient as Client;
 use Didww\API2\ApiDetails;
 
 class AuthorizeController extends \Yoda\Controller
@@ -23,8 +22,7 @@ class AuthorizeController extends \Yoda\Controller
         $testMode = \Yoda\Request::getBool('test_mode');
 
         try{
-            Client::setCredentials(new ApiCredentials($userName, $password, $testMode));
-//            Client::setDebug(true);
+            APIHelper::setupClient($userName, $password, $testMode);
 
             $details = new ApiDetails();
         }catch (SoapFault $e) {
@@ -34,10 +32,9 @@ class AuthorizeController extends \Yoda\Controller
             $this->redirect('index.php?controller=authorize',  $e->getMessage(), 'error');
         }
 
-
         $_SESSION['username'] = $userName;
-        $_SESSION['password'] = $password;
-        $_SESSION['test_mode'] = $testMode;
+        $_SESSION['resellerKey'] = $password;
+        $_SESSION['isTestMode'] = $testMode;
 
         $_SESSION['reseller_id'] = $details->getResellerId();
         $this->redirect('index.php');

@@ -55,7 +55,7 @@ class MappingController extends ApplicationController
                     }
                     break;
                 case 'pbxww':
-                    $mapping = new Didww\API2\Mapping\ACF();
+                    $mapping = new Didww\API2\Mapping\PBXww();
                 default:
                     break;
             }

@@ -8,7 +8,6 @@
 
 class BalanceController extends ApplicationController
 {
-
     function index()
     {
         $this->redirect('index.php?controller=balance&action=add');
