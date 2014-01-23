@@ -4,10 +4,7 @@
 
 $(document).ready(function(){
     $('#addRow').on('click', function(){
-        var counter = +$('.table tr:last td:first').html();
-
         var tr = '<tr>' +
-            '<td>' + (counter + 1) + '</td>' +
             '<td><input type="text" name="src_prefix[]" class="form-control"></td>' +
             '<td><input type="text" name="dst_prefix[]" class="form-control"></td>' +
             '<td><input type="text" name="rate[]" class="form-control"></td>' +

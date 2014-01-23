@@ -14,6 +14,7 @@
         });
     });
 </script>
+
 <form class="form-horizontal" action="index.php" method="post" role="form">
     <input type="hidden" name="authenticity_token" value="<?= $authenticity_token ?>">
     <input type="hidden" name="controller" value="orders">
@@ -26,7 +27,7 @@
                 <option value="">Select country...</option>
                 <?php /** @var $country Didww\API2\Country */
                 foreach($countries as $iso => $country): ?>
-                <option value="<?= $iso ?>"><?= $country->getCountryName() ?></option>
+                <option value="<?= $iso ?>" <?= ($country_iso == $iso) ? 'selected="selected"' : '' ?>><?= $country->getCountryName() ?></option>
                 <?php endforeach; ?>
             </select>
         </div>
@@ -36,6 +37,10 @@
         <div class="col-lg-3">
             <select class='form-control' name="city_id" id="city">
                 <option value="">Select city...</option>
+                <?php /** @var $city Didww\API2\City */
+                foreach($cities as $city): ?>
+                    <option value="<?= $city->getCityId() ?>" <?= ($city_id == $city->getCityId()) ? 'selected="selected"' : '' ?>><?= $city->getCityName() ?></option>
+                <?php endforeach; ?>
             </select>
         </div>
     </div>
@@ -51,12 +56,14 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="autorenew" class="col-lg-2 control-label">Renew Automatically</label>
-        <div class="col-lg-3">
-            <input type="checkbox" name="autorenew" id="autorenew">
+        <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="autorenew"> Renew Automatically
+                </label>
+            </div>
         </div>
     </div>
-
     <div class="form-group">
         <label for="customer_id" class="col-lg-2 control-label">Customer ID</label>
         <div class="col-lg-3">

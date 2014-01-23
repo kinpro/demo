@@ -45,7 +45,7 @@
             <input type="hidden" name="controller" value="authorize">
             <input type="hidden" name="action" value="login">
 
-            <h2>Login</h2>
+            <h2>Login To DIDWW Demo Panel</h2>
             <p><input type="text" placeholder="Username" name="username"></p>
             <p style="margin-bottom: 10px"><input type="password" placeholder="API Key" name="password"></p>
             <div style="text-align: right; padding-right: 30px; padding-bottom: 10px"><input type="checkbox" name="test_mode" id="mode"><label for="mode" style="margin-left: 10px"><span id="mode_mark">Test Mode</span></label></div>

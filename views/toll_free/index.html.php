@@ -10,7 +10,6 @@
 
     <table class="table">
         <tr>
-            <th>#</th>
             <th>Src Prefix</th>
             <th>Dst Prefix</th>
             <th>Rate (USD)</th>
@@ -18,11 +17,8 @@
             <th>Reject Calls</th>
             <th></th>
         </tr>
-        <?php
-        $i = 0;
-        foreach($rates as $rate): ?>
+        <?php foreach($rates as $rate): ?>
             <tr>
-                <td><?= ++$i ?></td>
                 <td><input type="text" name="src_prefix[]" value="<?= $rate->src_prefix ?>" class='form-control'></td>
                 <td><input type="text" name="dst_prefix[]" value="<?= $rate->dst_prefix ?>" class='form-control'></td>
                 <td><input type="text" name="rate[]" value="<?= sprintf('%0.4f', $rate->rate) ?>" class='form-control'></td>

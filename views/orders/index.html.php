@@ -23,6 +23,12 @@
     <?php $i = 0;
     /** @var $did Didww\API2\DIDNumber */
     foreach($dids as $did): ?>
+    <form class="form-horizontal" action="index.php" method="post" role="form">
+        <input type="hidden" name="authenticity_token" value="<?= $authenticity_token ?>">
+        <input type="hidden" name="controller" value="orders">
+        <input type="hidden" name="action" value="renew">
+        <input type="hidden" name="did_number" value="<?= $did->getDidNumber() ?>">
+        <input type="hidden" name="customer_id" value="<?= $customer_id ?>">
         <tr>
             <td><?= ++$i ?></td>
             <td><?= $did->getDidNumber() ?></td>
@@ -35,9 +41,16 @@
             <td><?= $did->getDidMappingFormat() ?></td>
             <td><?= $did->getDidSetup() ?></td>
             <td><?= $did->getDidMonthly() ?></td>
-            <td><?= $did->getDidPeriod() ?></td>
+            <td>
+                <select class='form-control' name="period" id="period" style="width: 70px">
+                    <option value="1" <?= $did->getDidPeriod() == 1 ? 'selected="selected"' : '' ?>>1</option>
+                    <option value="3" <?= $did->getDidPeriod() == 3 ? 'selected="selected"' : '' ?>>3</option>
+                    <option value="6" <?= $did->getDidPeriod() == 6 ? 'selected="selected"' : '' ?>>6</option>
+                    <option value="12" <?= $did->getDidPeriod() == 12 ? 'selected="selected"' : '' ?>>12</option>
+                </select>
+            </td>
             <td nowrap>
-                <a href="index.php?controller=orders&action=renew&did_number=<?= $did->getDidNumber() ?>&customer_id=<?= $customer_id ?>">Renew</a><br>
+                <button type="submit" class="btn btn-primary">Renew</button><br>
                 <a href="index.php?controller=mapping&action=add&did_number=<?= $did->getDidNumber() ?>&customer_id=<?= $customer_id ?>">Update Mapping</a><br>
                 <a href="index.php?controller=call_history&did_number=<?= $did->getDidNumber() ?>&customer_id=<?= $customer_id ?>">Call History</a><br>
                 <?php if($did->getDidStatus() == 1): ?>
@@ -47,6 +60,7 @@
                 <?php endif; endif; ?>
             </td>
         </tr>
+    </form>
     <?php endforeach; ?>
 </table>
 

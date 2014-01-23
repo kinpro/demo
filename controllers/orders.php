@@ -24,9 +24,25 @@ class OrdersController extends ApplicationController
 
     function add()
     {
+        $countryIso = \Yoda\Request::getString('country_iso');
+        $customer_id = \Yoda\Request::getInt('customer_id');
+        $city_id = \Yoda\Request::getInt('city_id');
+
+        $cities = [];
+        if($countryIso) {
+            $country = new Didww\API2\Country();
+            $country->setCountryIso($countryIso);
+            $country->loadCities();
+
+            $cities = $country->getCities();
+        }
+
         $this->getView()->setProperties([
-            'customer_id' => \Yoda\Request::getInt('customer_id'),
-            'countries' => Didww\API2\Country::getAll()
+            'customer_id' => $customer_id,
+            'country_iso' => $countryIso,
+            'city_id' => $city_id,
+            'countries' => Didww\API2\Country::getAll(),
+            'cities' => $cities
         ])->display();
     }
 
@@ -62,11 +78,12 @@ class OrdersController extends ApplicationController
     {
         $did_number = \Yoda\Request::getString('did_number');
         $customer_id = \Yoda\Request::getInt('customer_id');
+        $period = \Yoda\Request::getInt('period', 1);
 
         try{
             $order = new Didww\API2\Order();
             $order->setCustomerId($customer_id);
-            $order->setPeriod(1);
+            $order->setPeriod($period);
 
             $did = new Didww\API2\DIDNumber();
             $did->setDidNumber($did_number);
