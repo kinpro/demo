@@ -16,13 +16,14 @@
         z-index: 99999;
     }
 </style>
-<form id="pbxww_form" method="post" action="https://<?= $pbxwwdomain ?>/index.php?r=<?= microtime(true) ?>">
+<form id="pbxww_form" method="post" action="http://<?= $pbxwwdomain ?>/index.php?r=<?= microtime(true) ?>">
     <input type="hidden" name="message" value="<?= $request->getMessage() ?>"/>
     <input type="hidden" name="key" value="<?= $request->getKey() ?>"/>
     <input type="hidden" name="reseller_id" value="<?= $request->getResellerID() ?>"/>
     <input type="hidden" name="site_name" value="<?= $request->getSiteName() ?>"/>
     <input type="hidden" name="site_url" value="<?= $request->getSiteUrl() ?>" />
     <input type="hidden" name="help_url" value="<?= $request->getHelpUrl() ?>" />
+    <input type="hidden" name="order_url" value="<?= $request->getOrderUrl() ?>" />
     <input type="hidden" name="support_url" value="<?= $request->getSupportUrl() ?>" />
     <input type="hidden" name="language" value="<?= $request->getLanguage() ?>" />
     <input type="hidden" name="timezone" value="<?= $request->getTimezone() ?>" />

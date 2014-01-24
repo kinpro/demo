@@ -6,9 +6,6 @@
 * @copyright 2013 Igor Gonchar
 */
 
-use Didww\API2\Mapping\Gtalk;
-
-
 class OrdersController extends ApplicationController
 {
     function index()
@@ -27,6 +24,11 @@ class OrdersController extends ApplicationController
         $countryIso = \Yoda\Request::getString('country_iso');
         $customer_id = \Yoda\Request::getInt('customer_id');
         $city_id = \Yoda\Request::getInt('city_id');
+        $pbxwwForm = \Yoda\Request::getInt('pbxww_form');
+
+        if($pbxwwForm) {
+            $this->layout = 'pbxww';
+        }
 
         $cities = [];
         if($countryIso) {
@@ -42,8 +44,9 @@ class OrdersController extends ApplicationController
             'country_iso' => $countryIso,
             'city_id' => $city_id,
             'countries' => Didww\API2\Country::getAll(),
-            'cities' => $cities
-        ])->display();
+            'cities' => $cities,
+            'pbxww_form' => $pbxwwForm
+        ])->display($pbxwwForm ? 'pbxww' : 'add');
     }
 
     function create()
@@ -53,13 +56,14 @@ class OrdersController extends ApplicationController
         $city_id = \Yoda\Request::getInt('city_id');
         $period = \Yoda\Request::getInt('period');
         $autorenew = \Yoda\Request::getBool('autorenew');
+        $pbxwwForm = \Yoda\Request::getInt('pbxww_form');
 
         $order = new Didww\API2\Order();
         $order->setCustomerId($customer_id);
         $order->setCountryIso($countryIso);
         $order->setPeriod($period);
 
-        $mapping = new Gtalk("john@doe.com");
+        $mapping = new Didww\API2\Mapping\PBXww(); // default mapping PBXww
         $order->setMapData($mapping);
         $order->setCityId($city_id);
         $order->setAutorenewEnable($autorenew);
@@ -71,7 +75,7 @@ class OrdersController extends ApplicationController
             $this->setMessage('Error: (' . $e->faultcode . ') ' . $e->faultstring, 'danger');
         }
 
-        $this->redirect('index.php?controller=customers');
+        $this->redirect($pbxwwForm ? 'index.php?controller=orders&action=add&customer_id=' . $customer_id . '&pbxww_form=1' : 'index.php?controller=customers');
     }
 
     function renew()

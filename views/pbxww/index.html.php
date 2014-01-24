@@ -1,4 +1,4 @@
-<form class="form-horizontal" action="index.php" method="post" role="form">
+<form class="form-horizontal" action="index.php" method="post" role="form" target="_blank">
     <input type="hidden" name="authenticity_token" value="<?= $authenticity_token ?>">
     <input type="hidden" name="controller" value="<?= $controller ?>">
     <input type="hidden" name="action" value="panel">

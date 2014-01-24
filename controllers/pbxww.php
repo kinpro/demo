@@ -47,6 +47,7 @@ class PbxwwController extends ApplicationController
         $site_url = \Yoda\Request::getString('site_url', 'http://example.com/');
         $help_url = \Yoda\Request::getString('help_url', 'http://example.com/help_url');
         $support_url = \Yoda\Request::getString('support_url', 'http://example.com/support_url');
+        $order_url = \Yoda\Application::liveSite(true) . 'index.php?controller=orders&action=add&customer_id=' . $customer_id . '&pbxww_form=1';
 
         $request  = new Didww\PBXww\Request();
         $request->setCustomerId($customer_id);
@@ -56,6 +57,7 @@ class PbxwwController extends ApplicationController
         $request->setSiteUrl($site_url);
         $request->setHelpUrl($help_url);
         $request->setSupportUrl($support_url);
+        $request->setOrderUrl($order_url);
         $request->setTimezone($timezone);
         $request->setLanguage($language);
 
