@@ -1,5 +1,7 @@
 <h1>Orders</h1>
 
+<a href="index.php?controller=orders&action=add&customer_id=<?= $customer_id ?>" class="btn btn-primary">New Order</a><br><br>
+
 <?php if(count($dids) == 0): ?>
     No Data
 <?php else: ?>

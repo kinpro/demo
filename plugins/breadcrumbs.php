@@ -48,8 +48,12 @@ class BreadcrumbsPlugin implements \Yoda\Observer\Observer
             if($name == 'orders') {
                 $titles[] = "Customers";
                 $links[] = 'index.php';
-                $titles[] = "New Order";
+                $titles[] = "Orders";
                 $links[] = 'index.php?controller=customers';
+            }
+            if($name == 'orders' && $controller->getCurrentAction() == 'add') {
+                $titles[] = "New Order";
+                $links[] = 'index.php?controller=orders&customer_id=' . \Yoda\Request::getInt('customer_id');
             }
             if($name == 'coverage') {
                 $titles[] = "Coverage";
