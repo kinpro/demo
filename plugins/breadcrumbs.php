@@ -29,6 +29,10 @@ class BreadcrumbsPlugin implements \Yoda\Observer\Observer
                 $titles[] = "Call History";
                 $links[] = 'index.php';
             }
+            if($name == 'sms') {
+                $titles[] = "SMS Log";
+                $links[] = 'index.php';
+            }
             if($name == 'pstn') {
                 $titles[] = "PSTN";
                 $links[] = 'index.php';

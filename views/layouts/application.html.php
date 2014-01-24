@@ -35,8 +35,6 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="<?= $controller == 'default' ? 'active' : '' ?>"><a href="index.php">Dashboard</a></li>
-                <li class="<?= $controller == 'balance' ? 'active' : '' ?>"><a href="index.php?controller=balance">Balance</a></li>
-                <li class="<?= $controller == 'mapping' ? 'active' : '' ?>"><a href="index.php?controller=mapping">Mapping</a></li>
                 <li class="<?= $controller == 'customers' ? 'active' : '' ?>"><a href="index.php?controller=customers">Customers</a></li>
                 <li class="<?= $controller == 'coverage' ? 'active' : '' ?>"><a href="index.php?controller=coverage">Coverage</a></li>
                 <li class="<?= $controller == 'call_history' ? 'active' : '' ?>"><a href="index.php?controller=call_history">Call History</a></li>
@@ -47,6 +45,7 @@
                         <li><a href="index.php?controller=toll_free">Toll Free</a></li>
                     </ul>
                 </li>
+                <li class="<?= $controller == 'sms' ? 'active' : '' ?>"><a href="index.php?controller=sms">SMS Log</a></li>
                 <li class="<?= $controller == 'pbxww' ? 'active' : '' ?>"><a href="index.php?controller=pbxww">PBXww</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
