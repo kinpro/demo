@@ -25,7 +25,7 @@ class SmsController extends ApplicationController
         $pagination = new \Yoda\Pagination();
         $pagination->setLimit(10);
         $pagination->setPage(\Yoda\Request::getInt('page', 1));
-        $pagination->setLink('index.php?controller=sms');
+        $pagination->setLink('index.php?controller=sms&customer_id=' . $customer_id . '&destination=' . $destination . '&source=' . $source . '&success=' . $success . '&from_date=' . $from_date . '&to_date=' . $to_date);
 
         $sms = new Didww\API2\SMSCollection();
         $sms->setCustomerId($customer_id);

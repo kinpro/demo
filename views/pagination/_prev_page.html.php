@@ -9,7 +9,7 @@
 $isDisabled = false;
 if($page == 1) $isDisabled = true;
 if($isDisabled) $href = 'javascript: void(0);';
-else $href = $link . (strpos($link, '&') ? '&' : '?') . 'page=' . ($page - 1);
+else $href = $link . '&page=' . ($page - 1);
 ?>
 
 <li><a href="<?= $href ?>">Prev</a></li>

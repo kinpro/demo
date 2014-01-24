@@ -9,7 +9,7 @@
 $isDisabled = false;
 if($page == count($pages)) $isDisabled = true;
 if($isDisabled) $href = 'javascript: void(0);';
-else $href = $link . (strpos($link, '&') ? '&' : '?') . 'page=' . count($pages);
+else $href = $link . '&page=' . count($pages);
 ?>
 
 <li><a href="<?= $href ?>">End</a></li>

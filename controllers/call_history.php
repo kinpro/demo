@@ -23,7 +23,7 @@ class CallHistoryController extends ApplicationController
         $pagination = new \Yoda\Pagination();
         $pagination->setLimit(10);
         $pagination->setPage(\Yoda\Request::getInt('page', 1));
-        $pagination->setLink('index.php?controller=call_history');
+        $pagination->setLink('index.php?controller=call_history&did_number=' . $did_number . '&customer_id=' . $customer_id . '&from_date=' . $from_date . '&to_date=' . $to_date);
 
         $cdr = new Didww\API2\CDRCollection();
         $cdr->setCustomerId($customer_id);
