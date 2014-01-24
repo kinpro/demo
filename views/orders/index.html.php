@@ -19,6 +19,7 @@
         <th>Mapping</th>
         <th>Setup Price (USD)</th>
         <th>Monthly Price (USD)</th>
+        <th>Is Autorenew Enabled</th>
         <th>Period</th>
         <th>Actions</th>
     </tr>
@@ -43,6 +44,11 @@
             <td><?= $did->getDidMappingFormat() ?></td>
             <td><?= $did->getDidSetup() ?></td>
             <td><?= $did->getDidMonthly() ?></td>
+            <td>
+                <a title="Change autorenew status" href="index.php?controller=orders&action=autorenew&customer_id=<?= $customer_id ?>&did_number=<?= $did->getDidNumber() ?>&status=<?= 1 - $did->getOrder()->getAutorenewEnable() ?>">
+                    <?= $did->getOrder()->getAutorenewEnable() ? 'Yes' : 'No' ?>
+                </a>
+            </td>
             <td>
                 <select class='form-control' name="period" id="period" style="width: 70px">
                     <option value="1" <?= $did->getDidPeriod() == 1 ? 'selected="selected"' : '' ?>>1</option>

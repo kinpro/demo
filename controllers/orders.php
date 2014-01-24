@@ -154,4 +154,29 @@ class OrdersController extends ApplicationController
         $this->redirect('index.php?controller=orders&customer_id=' . $customer_id);
     }
 
+    function autorenew()
+    {
+        $did_number = \Yoda\Request::getString('did_number');
+        $customer_id = \Yoda\Request::getInt('customer_id');
+        $status = \Yoda\Request::getInt('status');
+
+        try{
+            $order = new Didww\API2\Order();
+            $order->setCustomerId($customer_id);
+
+            $did = new Didww\API2\DIDNumber();
+            $did->setDidNumber($did_number);
+            $did->setOrder($order);
+            $did->changeAutorenew($status);
+
+            $this->setMessage('Autorenew status for DID #' . $did->getDidNumber() . ' was changed successfully');
+        }catch (SoapFault $e) {
+            $this->setMessage('Error: (' . $e->faultcode . ') ' . $e->faultstring, 'danger');
+        }catch (Exception $e) {
+            $this->setMessage($e->getMessage(), 'danger');
+        }
+
+        $this->redirect('index.php?controller=orders&customer_id=' . $customer_id);
+    }
+
 }
