@@ -21,6 +21,7 @@
                 <?php endif; ?>
 
                 <a href="index.php?controller=call_history&customer_id=<?= $customer_id ?>">Call History</a><br>
+                <a href="index.php?controller=sms&customer_id=<?= $customer_id ?>">SMS</a><br>
                 <a href="index.php?controller=pbxww&customer_id=<?= $customer_id ?>">PBXww</a>
             </td>
         </tr>

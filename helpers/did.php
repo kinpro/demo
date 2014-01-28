@@ -21,7 +21,7 @@ class DIDHelper extends ApplicationHelper
         $did_numbers = [];
         /** @var $order Didww\API2\Order */
         foreach($orders as $order) {
-            if($order->getMapData()->getMapDetail() == 'acf-sip.didreseller.com/0') {
+            if($order->hasPBXwwMapping() && $order->getNumber()->isActive()) {
                 $did_numbers[] = $order->getNumber()->getDidNumber();
             }
         }

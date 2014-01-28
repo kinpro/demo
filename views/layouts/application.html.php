@@ -37,7 +37,16 @@
                 <li class="<?= $controller == 'default' ? 'active' : '' ?>"><a href="index.php">Dashboard</a></li>
                 <li class="<?= $controller == 'customers' ? 'active' : '' ?>"><a href="index.php?controller=customers">Customers</a></li>
                 <li class="<?= $controller == 'coverage' ? 'active' : '' ?>"><a href="index.php?controller=coverage">Coverage</a></li>
-                <li class="<?= $controller == 'call_history' ? 'active' : '' ?>"><a href="index.php?controller=call_history">Call History</a></li>
+
+                <li class="dropdown <?= in_array($controller, ['call_history', 'call_history_invoices']) ? 'active' : '' ?>">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Call History <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.php?controller=call_history">Call History</a></li>
+                        <li><a href="index.php?controller=call_history_invoices">Call History Invoices</a></li>
+                    </ul>
+                </li>
+
+                <li class="<?= $controller == 'sms' ? 'active' : '' ?>"><a href="index.php?controller=sms">SMS Log</a></li>
                 <li class="dropdown <?= in_array($controller, ['pstn', 'toll_free']) ? 'active' : '' ?>">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Price Lists <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -45,7 +54,6 @@
                         <li><a href="index.php?controller=toll_free">Toll Free</a></li>
                     </ul>
                 </li>
-                <li class="<?= $controller == 'sms' ? 'active' : '' ?>"><a href="index.php?controller=sms">SMS Log</a></li>
                 <li class="<?= $controller == 'pbxww' ? 'active' : '' ?>"><a href="index.php?controller=pbxww">PBXww</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

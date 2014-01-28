@@ -52,7 +52,10 @@ class PbxwwController extends ApplicationController
         $request  = new Didww\PBXww\Request();
         $request->setCustomerId($customer_id);
         $request->setResellerId($_SESSION['reseller_id']);
-        $request->setNumbers(DIDHelper::getPBXwwDIDsByCustomerID($customer_id));
+
+        $did_numbers = DIDHelper::getPBXwwDIDsByCustomerID($customer_id);
+
+        $request->setNumbers($did_numbers);
         $request->setSiteName($site_name);
         $request->setSiteUrl($site_url);
         $request->setHelpUrl($help_url);
