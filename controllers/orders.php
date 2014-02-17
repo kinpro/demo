@@ -25,6 +25,7 @@ class OrdersController extends ApplicationController
         $customer_id = \Yoda\Request::getInt('customer_id');
         $city_id = \Yoda\Request::getInt('city_id');
         $pbxwwForm = \Yoda\Request::getInt('pbxww_form');
+        $prepaid_funds = \Yoda\Request::getFloat('prepaid_funds');
 
         if($pbxwwForm) {
             $this->layout = 'pbxww';
@@ -45,7 +46,8 @@ class OrdersController extends ApplicationController
             'city_id' => $city_id,
             'countries' => Didww\API2\Country::getAll(),
             'cities' => $cities,
-            'pbxww_form' => $pbxwwForm
+            'pbxww_form' => $pbxwwForm,
+            'prepaid_funds' => $prepaid_funds
         ])->display($pbxwwForm ? 'pbxww' : 'add');
     }
 
@@ -57,16 +59,57 @@ class OrdersController extends ApplicationController
         $period = \Yoda\Request::getInt('period');
         $autorenew = \Yoda\Request::getBool('autorenew');
         $pbxwwForm = \Yoda\Request::getInt('pbxww_form');
+        $prepaid_funds = \Yoda\Request::getFloat('prepaid_funds');
+
+
 
         $order = new Didww\API2\Order();
         $order->setCustomerId($customer_id);
         $order->setCountryIso($countryIso);
         $order->setPeriod($period);
 
-        $mapping = new Didww\API2\Mapping\PBXww(); // default mapping PBXww
+        if($pbxwwForm) {
+            $mapping = new Didww\API2\Mapping\PBXww();
+        } else {
+
+            $map_type = \Yoda\Request::getString('map_type');
+            $map_proto = \Yoda\Request::getString('map_proto');
+            $host = \Yoda\Request::getString('host');
+            $map_details = \Yoda\Request::getString('map_details');
+
+            switch($map_type) {
+                case 'gtalk':
+                    $mapping = new Didww\API2\Mapping\Gtalk($map_details);
+                    break;
+                case 'pstn':
+                    $mapping = new Didww\API2\Mapping\PSTN($map_details);
+                    break;
+                case 'voip':
+                    switch($map_proto) {
+                        case 'sip':
+                            $mapping = new Didww\API2\Mapping\SIP($host, $map_details);
+                            break;
+                        case 'h323':
+                            $mapping = new Didww\API2\Mapping\H323($host, $map_details);
+                            break;
+                        case 'iax':
+                            $mapping = new Didww\API2\Mapping\IAX($host, $map_details);
+                            break;
+                        default:
+                    }
+                    break;
+                case 'pbxww':
+                    $mapping = new Didww\API2\Mapping\PBXww();
+                    break;
+                default:
+                    break;
+            }
+        }
+
         $order->setMapData($mapping);
         $order->setCityId($city_id);
         $order->setAutorenewEnable($autorenew);
+        $order->setPrepaidFunds($prepaid_funds);
 
         try{
             $did_number = $order->createNumber();

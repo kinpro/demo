@@ -18,8 +18,6 @@ class MappingController extends ApplicationController
         $customer_id = \Yoda\Request::getInt('customer_id');
         $did_number = \Yoda\Request::getString('did_number');
 
-        $this->getView()->addJavascriptURL('/assets/javascripts/mapping.js');
-
         $this->getView()->setProperties(['customer_id' => $customer_id, 'did' => $did_number])->display();
     }
 
@@ -56,6 +54,7 @@ class MappingController extends ApplicationController
                     break;
                 case 'pbxww':
                     $mapping = new Didww\API2\Mapping\PBXww();
+                    break;
                 default:
                     break;
             }

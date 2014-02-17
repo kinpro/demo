@@ -8,6 +8,10 @@
 
 class BreadcrumbsPlugin implements \Yoda\Observer\Observer
 {
+    /**
+     * @param $event
+     * @param $controller \Yoda\Controller
+     */
     public function notify($event, $controller)
     {
         if($event == 'onBeforeControllerExecute') {
