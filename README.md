@@ -15,3 +15,6 @@ Use skeleton for creating the project `php composer.phar create-project didww/de
 ## License
 
 Licensed under the MIT license.
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/didww/demo/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
