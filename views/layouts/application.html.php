@@ -3,14 +3,14 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title><?= $title ?></title>
-    <link rel="shortcut icon" href="/assets/images/logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon" />
 
     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/stylesheets/whhg.css">
-    <link href="/assets/stylesheets/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/stylesheets/whhg.css">
+    <link href="assets/stylesheets/style.css" rel="stylesheet" />
 
     <?= $stylesheets ?>
     <?= $javascripts ?>

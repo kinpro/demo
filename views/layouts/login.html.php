@@ -19,9 +19,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="/assets/stylesheets/login/base.css">
-    <link rel="stylesheet" href="/assets/stylesheets/login/skeleton.css">
-    <link rel="stylesheet" href="/assets/stylesheets/login/layout.css">
+    <link rel="stylesheet" href="assets/stylesheets/login/base.css">
+    <link rel="stylesheet" href="assets/stylesheets/login/skeleton.css">
+    <link rel="stylesheet" href="assets/stylesheets/login/layout.css">
 
 </head>
 <body>

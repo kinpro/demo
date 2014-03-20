@@ -12,7 +12,7 @@ class TollFreeController extends ApplicationController
     {
         $toll_free = new Didww\API2\TollFree();
 
-        $this->getView()->addJavascriptURL('/assets/javascripts/toll_free.js');
+        $this->getView()->addJavascriptURL('assets/javascripts/toll_free.js');
         $this->getView()->setProperties(['rates' => $toll_free->getAll()])->display();
     }
 

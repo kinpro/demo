@@ -10,7 +10,7 @@ class SmsController extends ApplicationController
 {
     function index()
     {
-        $this->getView()->addStylesheetURL('/assets/stylesheets/sorting.css');
+        $this->getView()->addStylesheetURL('assets/stylesheets/sorting.css');
 
         $customer_id = \Yoda\Request::getInt('customer_id');
         $destination = \Yoda\Request::getString('destination');

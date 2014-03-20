@@ -11,4 +11,6 @@ require __DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autolo
 session_start();
 
 $app = new Yoda\Application();
+
+Yoda\Application::$rootPath = Yoda\Application::$config['application']['rootPath'] ?: null;
 $app->run();

@@ -1,4 +1,4 @@
-<script type="text/javascript" src="/assets/javascripts/orders.js"></script>
+<script type="text/javascript" src="assets/javascripts/orders.js"></script>
 
 <form class="form-horizontal" action="index.php" method="post" role="form">
     <input type="hidden" name="authenticity_token" value="<?= $authenticity_token ?>">

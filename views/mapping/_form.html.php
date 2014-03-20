@@ -1,4 +1,4 @@
-<script src="/assets/javascripts/mapping.js"></script>
+<script src="assets/javascripts/mapping.js"></script>
 
 <div class="form-group">
     <label for="map_type" class="col-lg-2 control-label">Map Type</label>
