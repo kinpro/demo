@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "696f790a6ea0bb79125778543e64cca9",
+    "hash": "7c1eb656e8d0b2dd54961f23f7d3ca49",
     "packages": [
         {
             "name": "didww/php-sdk",
@@ -183,7 +183,8 @@
 
     ],
     "platform": {
-        "php": ">=5.4"
+        "php": ">=5.4.0",
+        "ext-soap": "*"
     },
     "platform-dev": [
 
