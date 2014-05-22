@@ -1,9 +1,0 @@
-development:
-  siteName: DIDWW Demo (In Development Mode)
-  debugSoap: true
-  rootPath: false
-
-production:
-  siteName: DIDWW Demo
-  debugSoap: true
-  rootPath: false

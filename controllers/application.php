@@ -10,11 +10,13 @@ class ApplicationController extends \Yoda\Controller
 {
     function beforeInitialize()
     {
+        $this->getView()->setTitle('DIDWW Demo');
+
         if(!isset($_SESSION['reseller_id'])) {
             $this->redirect('index.php?controller=authorize');
         }
 
-        $this->addObserver(new BreadcrumbsPlugin()); // add breadcrumbs plugin
+        $this->addListener(new BreadcrumbsPlugin()); // add breadcrumbs plugin
 
         self::setupAPIClient();
 

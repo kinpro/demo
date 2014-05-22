@@ -6,7 +6,7 @@
 * @copyright 2013 Igor Gonchar
 */
 
-class BreadcrumbsPlugin implements \Yoda\Observer\Observer
+class BreadcrumbsPlugin implements \PHPDispatcher\Listener
 {
     /**
      * @param $event
