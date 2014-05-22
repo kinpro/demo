@@ -1,0 +1,384 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "17d28cf7a0c5b7fbcb493aac9d1e20bd",
+    "packages": [
+        {
+            "name": "didww/php-sdk",
+            "version": "0.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/didww/php-sdk.git",
+                "reference": "a34b9ac2ca1f923e14b7044ef61ef0312ff172dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/didww/php-sdk/zipball/a34b9ac2ca1f923e14b7044ef61ef0312ff172dd",
+                "reference": "a34b9ac2ca1f923e14b7044ef61ef0312ff172dd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Didww": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Igor Gonchar",
+                    "email": "igor.g@didww.com",
+                    "homepage": "https://www.didww.com/"
+                },
+                {
+                    "name": "Igor Fedoronchuk",
+                    "email": "igor.f@didww.com"
+                }
+            ],
+            "description": "DIDWW API 2 PHP SDK",
+            "time": "2014-01-24 16:10:15"
+        },
+        {
+            "name": "gigorok/inflector",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gigorok/inflector.git",
+                "reference": "d284c88a28b34bb3c0f1eeb2bc85e3f2a5ced3a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gigorok/inflector/zipball/d284c88a28b34bb3c0f1eeb2bc85e3f2a5ced3a5",
+                "reference": "d284c88a28b34bb3c0f1eeb2bc85e3f2a5ced3a5",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Inflector": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Gonchar",
+                    "email": "gigorok@gmail.com",
+                    "homepage": "http://gigorok.name"
+                }
+            ],
+            "description": "Transform words from singular to plural, class names to table names and other",
+            "time": "2014-01-29 14:46:10"
+        },
+        {
+            "name": "gigorok/php-config",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gigorok/php-config.git",
+                "reference": "49c336a3ef68b04fb0df0ac80ef3431020fed622"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gigorok/php-config/zipball/49c336a3ef68b04fb0df0ac80ef3431020fed622",
+                "reference": "49c336a3ef68b04fb0df0ac80ef3431020fed622",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "symfony/yaml": "2.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPConfig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Gonchar",
+                    "email": "gigorok@gmail.com",
+                    "homepage": "http://gigorok.name"
+                }
+            ],
+            "description": "Configuration provider",
+            "homepage": "http://github.com/gigorok/php-config",
+            "time": "2014-02-05 22:06:29"
+        },
+        {
+            "name": "gigorok/php-dispatcher",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gigorok/php-dispatcher.git",
+                "reference": "b4176b88fe28d09b341a2fab30919e6d73c8a983"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gigorok/php-dispatcher/zipball/b4176b88fe28d09b341a2fab30919e6d73c8a983",
+                "reference": "b4176b88fe28d09b341a2fab30919e6d73c8a983",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPDispatcher\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Gonchar",
+                    "email": "gigorok@gmail.com",
+                    "homepage": "http://gigorok.name"
+                }
+            ],
+            "description": "PHP Dispather",
+            "homepage": "http://github.com/gigorok/php-dispatcher",
+            "time": "2014-02-06 13:12:08"
+        },
+        {
+            "name": "gigorok/php-error-handler",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gigorok/php-error-handler.git",
+                "reference": "2992de7ac08c2461b970804873a30efad2c2dbc3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gigorok/php-error-handler/zipball/2992de7ac08c2461b970804873a30efad2c2dbc3",
+                "reference": "2992de7ac08c2461b970804873a30efad2c2dbc3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "psr/log": "1.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPErrorHandler\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Gonchar",
+                    "email": "gigorok@gmail.com",
+                    "homepage": "http://gigorok.name"
+                }
+            ],
+            "description": "PHP error handling",
+            "homepage": "http://github.com/gigorok/php-error-handler",
+            "time": "2014-03-21 09:59:38"
+        },
+        {
+            "name": "gigorok/yoda",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gigorok/yoda.git",
+                "reference": "fdef2f7e20adc0f771fdc703720aeb788a52baa3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gigorok/yoda/zipball/fdef2f7e20adc0f771fdc703720aeb788a52baa3",
+                "reference": "fdef2f7e20adc0f771fdc703720aeb788a52baa3",
+                "shasum": ""
+            },
+            "require": {
+                "gigorok/inflector": "0.1.*",
+                "gigorok/php-dispatcher": "0.1.*",
+                "gigorok/php-error-handler": "0.1.*",
+                "php": ">=5.4",
+                "psr/log": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yoda\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Gonchar",
+                    "email": "gigorok@gmail.com",
+                    "homepage": "http://gigorok.name"
+                }
+            ],
+            "description": "PHP-framework for development Web-Applications",
+            "homepage": "http://github.com/gigorok/yoda",
+            "time": "2014-03-21 10:25:20"
+        },
+        {
+            "name": "gigorok/yoda-pagination",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gigorok/yoda-pagination.git",
+                "reference": "f5c89c8b29c6d477348f3d2bcaa1a0695eccea7c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gigorok/yoda-pagination/zipball/f5c89c8b29c6d477348f3d2bcaa1a0695eccea7c",
+                "reference": "f5c89c8b29c6d477348f3d2bcaa1a0695eccea7c",
+                "shasum": ""
+            },
+            "require-dev": {
+                "gigorok/yoda": "0.1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Yoda": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Igor Gonchar",
+                    "email": "gigorok@gmail.com",
+                    "homepage": "http://gigorok.name"
+                }
+            ],
+            "description": "Pagination component for Yoda Framework",
+            "time": "2014-01-10 14:33:05"
+        },
+        {
+            "name": "psr/log",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "a78d6504ff5d4367497785ab2ade91db3a9fbe11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/a78d6504ff5d4367497785ab2ade91db3a9fbe11",
+                "reference": "a78d6504ff5d4367497785ab2ade91db3a9fbe11",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Psr\\Log\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2014-01-18 15:33:09"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "2.3.x-dev",
+            "target-dir": "Symfony/Component/Yaml",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Yaml.git",
+                "reference": "3acf34f6993db3d873fa77ac2cb6e595db00b88d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/3acf34f6993db3d873fa77ac2cb6e595db00b88d",
+                "reference": "3acf34f6993db3d873fa77ac2cb6e595db00b88d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Yaml\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-03-04 16:04:39"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "gigorok/yoda": 20
+    },
+    "platform": {
+        "php": ">=5.4"
+    },
+    "platform-dev": [
+
+    ]
+}
